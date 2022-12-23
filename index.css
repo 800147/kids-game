@@ -23,6 +23,18 @@ body {
     font-size: 1.9vw;
   }
 }
+@media (max-width: 100vh) {
+  .Game {
+    flex-direction: column;
+    font-size: 1.9vh;
+  }
+}
+@media (max-width: 66vh) {
+  .Game {
+    flex-direction: column;
+    font-size: 2.8vw;
+  }
+}
 
 .Inventory {
   width: calc(30em / 2 - 30em / var(--cols) * 0.25);
@@ -31,6 +43,12 @@ body {
   border-radius: 0.75em;
   box-sizing: border-box;
   flex-shrink: 0;
+}
+@media (max-width: 100vh) {
+  .Inventory {
+    width: var(--size);
+    height: calc(30em / 2 - 30em / var(--cols) * 0.25);
+  }
 }
 
 .Field {
@@ -110,7 +128,13 @@ body {
 }
 .Apple_collected {
   animation: collectApple 1s ease-in;
+  transform: translate(var(--translate-x), var(--translate-y));
   z-index: 100;
+}
+@media (max-width: 100vh) {
+  .Apple_collected {
+    transform: translate(var(--translate-y), var(--translate-x));
+  }
 }
 .Apple_collected::before {
   animation: collectAppleScale 1s ease-in;

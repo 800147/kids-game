@@ -82,7 +82,7 @@ export class Game {
             this.firstCellElem.appendChild(
                 __('div', {
                     class: 'Apple Apple_collected Field-Item',
-                    style: `transform: translate(${COLS * 100 + 25 + (COLS * 50 - 125) * Math.random()}%, ${(ROWS - 1) * 100 * Math.random()}%);`,
+                    style: `--translate-x: ${COLS * 100 + 25 + (COLS * 50 - 125) * Math.random()}%; --translate-y: ${(ROWS - 1) * 100 * Math.random()}%;`,
                     'data-x': this.apple.x,
                     'data-y': this.apple.y,
                 }),
