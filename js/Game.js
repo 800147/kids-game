@@ -1,6 +1,5 @@
 import { Dino } from './Dino.js';
 import { Item } from './Item.js';
-import { InputController } from './InputController.js';
 import { __ } from './el.js';
 
 const SIZES = { '3': 3, '5': 5, '7': 7, '9': 9 };
@@ -40,15 +39,6 @@ export class Game {
         this.dino.x = Math.round((this.field[this.dino.y].length - 1) / 2);
 
         this._setApple();
-
-        window.addEventListener('gamepadconnected', (e) => {
-            console.log(
-                'Gamepad connected',
-                e.gamepad,
-            );
-        });
-
-        new InputController(this);
     }
 
     _clear() {

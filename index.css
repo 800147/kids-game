@@ -10,7 +10,40 @@ body {
   overflow: hidden;
   overflow: clip;
   margin: 0;
+  touch-action: manipulation;
 }
+
+/* Wrapper */
+
+.Wrapper {
+  display: flex;
+  max-width: 96vw;
+  max-height: 96vh;
+  padding: 1cm;
+}
+
+@media (max-width: 100vh) {
+  .Wrapper {
+    flex-direction: column;
+  }
+}
+
+.Wrapper-Game {
+  flex-shrink: 0;
+}
+
+.Wrapper-ControllerIndent {
+  flex-shrink: 1;
+  width: 4.4cm;
+  height: 4.4cm;
+}
+
+.Wrapper:not(.Wrapper_isTouchDevice) .Wrapper-Controller,
+.Wrapper:not(.Wrapper_isTouchDevice) .Wrapper-ControllerIndent {
+  display: none;
+}
+
+/* Game */
 
 .Game {
   font-size: 2.8vh;
@@ -36,6 +69,8 @@ body {
   }
 }
 
+/* Inventory */
+
 .Inventory {
   width: calc(30em / 2 - 30em / var(--cols) * 0.25);
   height: var(--size);
@@ -50,6 +85,8 @@ body {
     height: calc(30em / 2 - 30em / var(--cols) * 0.25);
   }
 }
+
+/* Field */
 
 .Field {
   display: grid;
@@ -85,6 +122,29 @@ body {
   background-size: 100% 100%;
 }
 
+.Field-Item[data-x="0"] { --x: 0; }
+.Field-Item[data-x="1"] { --x: 1; }
+.Field-Item[data-x="2"] { --x: 2; }
+.Field-Item[data-x="3"] { --x: 3; }
+.Field-Item[data-x="4"] { --x: 4; }
+.Field-Item[data-x="5"] { --x: 5; }
+.Field-Item[data-x="6"] { --x: 6; }
+.Field-Item[data-x="7"] { --x: 7; }
+.Field-Item[data-x="8"] { --x: 8; }
+.Field-Item[data-x="9"] { --x: 9; }
+.Field-Item[data-y="0"] { --y: 0; }
+.Field-Item[data-y="1"] { --y: 1; }
+.Field-Item[data-y="2"] { --y: 2; }
+.Field-Item[data-y="3"] { --y: 3; }
+.Field-Item[data-y="4"] { --y: 4; }
+.Field-Item[data-y="5"] { --y: 5; }
+.Field-Item[data-y="6"] { --y: 6; }
+.Field-Item[data-y="7"] { --y: 7; }
+.Field-Item[data-y="8"] { --y: 8; }
+.Field-Item[data-y="9"] { --y: 9; }
+
+/* Dino */
+
 @keyframes goUp { from { transform: translate(0, 50%); } }
 @keyframes goRight { from { transform: translate(-50%, 0); } }
 @keyframes goDown { from { transform: translate(0, -50%); } }
@@ -110,11 +170,15 @@ body {
 .Dino_animation_failDown::before { animation: failDown 0.3s ease-out; }
 .Dino_animation_failLeft::before { animation: failLeft 0.3s ease-out; }
 
+/* Wall */
+
 @keyframes wallAppear { from { scale: 0.1; rotate: 45deg; } }
 .Wall::before {
   background-image: url(./img/wall.png);
   animation: wallAppear 0.3s ease-out;
 }
+
+/* Apple */
 
 .Apple::before {
   background-image: url(./img/apple.png);
@@ -145,23 +209,40 @@ body {
   animation: appleAppear 0.3s ease-out;
 }
 
-.Field-Item[data-x="0"] { --x: 0; }
-.Field-Item[data-x="1"] { --x: 1; }
-.Field-Item[data-x="2"] { --x: 2; }
-.Field-Item[data-x="3"] { --x: 3; }
-.Field-Item[data-x="4"] { --x: 4; }
-.Field-Item[data-x="5"] { --x: 5; }
-.Field-Item[data-x="6"] { --x: 6; }
-.Field-Item[data-x="7"] { --x: 7; }
-.Field-Item[data-x="8"] { --x: 8; }
-.Field-Item[data-x="9"] { --x: 9; }
-.Field-Item[data-y="0"] { --y: 0; }
-.Field-Item[data-y="1"] { --y: 1; }
-.Field-Item[data-y="2"] { --y: 2; }
-.Field-Item[data-y="3"] { --y: 3; }
-.Field-Item[data-y="4"] { --y: 4; }
-.Field-Item[data-y="5"] { --y: 5; }
-.Field-Item[data-y="6"] { --y: 6; }
-.Field-Item[data-y="7"] { --y: 7; }
-.Field-Item[data-y="8"] { --y: 8; }
-.Field-Item[data-y="9"] { --y: 9; }
+/* Controller */
+
+.Controller {
+  position: fixed;
+  right: 2cm;
+  bottom: 2cm;
+  width: 1.5cm;
+  height: 1.5cm;
+  opacity: 0.25;
+  z-index: 101;
+}
+
+.Controller-Button {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid black;
+  color: black;
+  position: absolute;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: 1cm;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Controller-Button:active {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.Controller-Button_up { top: -80%; }
+.Controller-Button_right { left: 80%; }
+.Controller-Button_down { top: 80%; }
+.Controller-Button_left { left: -80%; }

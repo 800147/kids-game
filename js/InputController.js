@@ -1,16 +1,25 @@
 export class InputController {
   constructor(game) {
     this.game = game;
+
     this.gameLoop = this.gameLoop.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
+
     this.lastAxe6 = 0;
     this.lastAxe7 = 0;
     this.lastButton12 = false;
     this.lastButton13 = false;
     this.lastButton14 = false;
     this.lastButton15 = false;
+
     setInterval(this.gameLoop, 16);
+
     document.addEventListener('keydown', this.onKeyDown);
+
+    document.getElementById('upButton').addEventListener('pointerdown', () => this.game.move(0, -1));
+    document.getElementById('rightButton').addEventListener('pointerdown', () => this.game.move(1, 0));
+    document.getElementById('downButton').addEventListener('pointerdown', () => this.game.move(0, 1));
+    document.getElementById('leftButton').addEventListener('pointerdown', () => this.game.move(-1, 0));
   }
 
   onKeyDown({ key }) {
