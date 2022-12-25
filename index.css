@@ -34,8 +34,8 @@ body {
 
 .Wrapper-ControllerIndent {
   flex-shrink: 1;
-  width: 4.4cm;
-  height: 4.4cm;
+  width: 4cm;
+  height: 4cm;
 }
 
 .Wrapper:not(.Wrapper_isTouchDevice) .Wrapper-Controller,
@@ -212,7 +212,6 @@ body {
 /* Controller */
 
 .Controller {
-  position: fixed;
   right: 2cm;
   bottom: 2cm;
   width: 1.5cm;
@@ -221,13 +220,18 @@ body {
   z-index: 101;
 }
 
+.Controller-ButtonImg {
+  width: 0.8cm;
+  height: 0.8cm;
+}
+
 .Controller-Button {
-  width: 100%;
-  height: 100%;
+  width: 1.5cm;
+  height: 1.5cm;
   border-radius: 50%;
   border: 2px solid black;
   color: black;
-  position: absolute;
+  position: fixed;
   background: none;
   display: flex;
   align-items: center;
@@ -235,14 +239,56 @@ body {
   line-height: 1;
   font-size: 1cm;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .Controller-Button:active {
   background-color: rgba(0, 0, 0, 0.75);
 }
 
-.Controller-Button_up { top: -80%; }
-.Controller-Button_right { left: 80%; }
-.Controller-Button_down { top: 80%; }
-.Controller-Button_left { left: -80%; }
+.Controller-Button_up {
+  right: 2.2cm;
+  bottom: 3.4cm;
+}
+
+.Controller-Button_right {
+  right: 1cm;
+  bottom: 2.2cm;
+}
+
+.Controller-Button_right .Controller-ButtonImg {
+  transform: rotate(90deg);
+}
+
+.Controller-Button_down {
+  right: 2.2cm;
+  bottom: 1cm;
+}
+
+.Controller-Button_down .Controller-ButtonImg {
+  transform: rotate(180deg);
+}
+
+.Controller-Button_left {
+  right: 3.4cm;
+  bottom: 2.2cm;
+}
+
+.Controller-Button_left .Controller-ButtonImg {
+  transform: rotate(-90deg);
+}
+
+.Controller-Button_fullscreen {
+  right: 1cm;
+  top: 1cm;
+  font-size: 0.8cm;
+}
+
+@media (max-width: 100vh) {
+  .Controller-Button_fullscreen {
+    right: unset;
+    top: unset;
+    left: 1cm;
+    bottom: 1cm;
+  }
+}

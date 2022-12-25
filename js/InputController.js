@@ -20,6 +20,31 @@ export class InputController {
     document.getElementById('rightButton').addEventListener('pointerdown', () => this.game.move(1, 0));
     document.getElementById('downButton').addEventListener('pointerdown', () => this.game.move(0, 1));
     document.getElementById('leftButton').addEventListener('pointerdown', () => this.game.move(-1, 0));
+    document.getElementById('fullscreenButton').addEventListener('click', () => {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+
+        return;
+      }
+
+      if (document.webkitFullscreenElement) {
+        document.webkitCancelFullScreen();
+
+        return;
+      }
+
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+
+        return;
+      }
+
+      document.documentElement.webkitRequestFullscreen();
+    });
+
+    if (!document.documentElement.requestFullscreen && !document.documentElement.webkitRequestFullscreen) {
+      document.getElementById('fullscreenButton').style = 'display: none;';
+    }
   }
 
   onKeyDown({ key }) {

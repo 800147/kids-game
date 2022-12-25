@@ -17,8 +17,8 @@ const init = () => {
 
   window.addEventListener('gamepadconnected', (e) => {
     console.log(
-        'Gamepad connected',
-        e.gamepad,
+      'Gamepad connected',
+      e.gamepad,
     );
   });
 };
