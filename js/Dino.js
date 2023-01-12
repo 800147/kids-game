@@ -9,6 +9,8 @@ export class Dino extends Item {
 
   move(dx, dy) {
     if (dx) {
+      this.modController?.setMod("flipped", dx < 0);
+
       if (this.setX(this.x + dx)) {
         this.modController?.setMod("animation", dx === 1 ? "goRight" : "goLeft", true);
 

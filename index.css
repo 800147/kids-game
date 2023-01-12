@@ -145,20 +145,27 @@ body {
 
 /* Dino */
 
-@keyframes goUp { from { transform: translate(0, 50%); } }
-@keyframes goRight { from { transform: translate(-50%, 0); } }
-@keyframes goDown { from { transform: translate(0, -50%); } }
-@keyframes goLeft { from { transform: translate(50%, 0); } }
-@keyframes failUp { 50% { transform: translate(0, -12.5%); } }
-@keyframes failRight { 50% { transform: translate(12.5%, 0); } }
-@keyframes failDown { 50% { transform: translate(0, 12.5%); } }
-@keyframes failLeft { 50% { transform: translate(-12.5%, 0); } }
+@keyframes goUp { from { transform: translate(0, 50%) var(--dino-flip-transform, none); } }
+@keyframes goRight { from { transform: translate(-50%, 0) var(--dino-flip-transform, none); } }
+@keyframes goDown { from { transform: translate(0, -50%) var(--dino-flip-transform, none); } }
+@keyframes goLeft { from { transform: translate(50%, 0) var(--dino-flip-transform, none); } }
+@keyframes failUp { 50% { transform: translate(0, -12.5%) var(--dino-flip-transform, none); } }
+@keyframes failRight { 50% { transform: translate(12.5%, 0) var(--dino-flip-transform, none); } }
+@keyframes failDown { 50% { transform: translate(0, 12.5%) var(--dino-flip-transform, none); } }
+@keyframes failLeft { 50% { transform: translate(-12.5%, 0) var(--dino-flip-transform, none); } }
 
 .Dino {
   z-index: 99;
+  --dino-flip-transform: scaleX(1);
+}
+.Dino_flipped {
+  --dino-flip-transform: scaleX(-1);
 }
 .Dino::before {
   background-image: url(./img/dino.png);
+}
+.Dino_flipped::before {
+  transform:  var(--dino-flip-transform, none);
 }
 
 .Dino_animation_goUp::before { animation: goUp 0.3s ease-out; }
