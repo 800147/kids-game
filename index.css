@@ -299,3 +299,19 @@ body {
     bottom: 1cm;
   }
 }
+
+.AboutLink, .AboutLink:visited {
+  color: grey;
+  position: fixed;
+  bottom: 0.25em;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: max-content;
+}
+@media (max-width: 100vh) {
+  .AboutLink, .AboutLink:visited {
+    bottom: unset;
+    top: 0.25em;
+  }
+}
