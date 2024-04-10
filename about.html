@@ -1,87 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kids Game — 800147.github.io</title>
-  <link rel="icon" type="image/png" href="./img/favicon.png" />
-  <link rel="stylesheet" href="https://800147.github.io/tools/src/Document/Document.css" />
-</head>
-<body class="Document">
-  <nav class="Document-Breadcrumbs">
-    <ul>
-      <li><a href="../">800147.github.io</a></li>
-    </ul>
-  </nav>
-  <main>
-    <h1>Kids Game</h1>
-    <section>
-      <h2>About</h2>
-      <p>
-        I made this game for my three yaers old daughter that wanted to play some games but was not
-        so familiar with game controller and could not handle with other games that challenges
-        the player too soon.
-      </p>
-      <figure>
-        <img src="./img/photo.jpg" width="1280" height="768" />
-        <figcaption>The kid and the Kids Game</figcaption>
-      </figure>
-      <p>
-        Main requirements for my game were as follows:
-      </p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kids Game — 800147.github.io</title>
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://800147.github.io/tools/src/Document/Document.css"
+    />
+  </head>
+  <body class="Document">
+    <nav class="Document-Breadcrumbs">
       <ul>
-        <li>Main character should be a dinosaur</li>
-        <li>Game should be easy to play</li>
-        <li>It shouldn't be possible to lose</li>
-        <li>There should be a little (but still existing) growth of difficulty</li>
-        <li>Gameplay should be endless</li>
-        <li>Progress should be visible even for a person who does not yet know the numbers</li>
-        <li>Game controller support</li>
+        <li><a href="../">800147.github.io</a></li>
       </ul>
-    </section>
-    <section>
-      <h2>Try it out</h2>
-      <p>
-        You can play the game right in your browser:
-      </p>
-      <figure>
-        <a
-          class="Document-Button"
-          style="--size: var(--size-l); --color: var(--blue-color);"
-          href="./"
-        >
-          Play the game
-        </a>
-      </figure>
-      <p>
-        Gamepad, keyboard arrows and touchscreen are supported. You can specify the field size by
-        "size" parameter. Available sizes are:
-      </p>
-      <ul>
-        <li><a href="https://800147.github.io/kids-game/?size=3">https://800147.github.io/kids-game/?size=3</a></li>
-        <li><a href="https://800147.github.io/kids-game/?size=5">https://800147.github.io/kids-game/?size=5</a></li>
-        <li><a href="https://800147.github.io/kids-game/?size=7">https://800147.github.io/kids-game/?size=7</a></li>
-        <li><a href="https://800147.github.io/kids-game/?size=9">https://800147.github.io/kids-game/?size=9</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Sources</h2>
-      <p>
-        The sources can be found on Github:
-      </p>
-      <figure>
-        <a
-          class="Document-Button"
-          style="--size: var(--size-l);"
-          href="https://github.com/800147/kids-game"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Sources on Github
-        </a>
-      </figure>
-    </section>
-  </main>
-</body>
+    </nav>
+    <main>
+      <h1>Kids Game</h1>
+      <section>
+        <h2>About</h2>
+        <p>
+          I made this game for my three yaers old daughter that wanted to play
+          some games but was not so familiar with game controller and could not
+          handle with other games that challenges the player too soon.
+        </p>
+        <figure>
+          <img src="./img/photo.jpg" width="1280" height="768" />
+          <figcaption>The kid and the Kids Game</figcaption>
+        </figure>
+        <p>Main requirements for my game were as follows:</p>
+        <ol>
+          <li>Main character should be a dinosaur</li>
+          <li>Game should be easy to play</li>
+          <li>It shouldn't be possible to lose</li>
+          <li>
+            There should be a little (but still existing) growth of difficulty
+          </li>
+          <li>Gameplay should be endless</li>
+          <li>
+            Progress should be visible even for a person who does not yet know
+            the numbers
+          </li>
+          <li>Game controller support</li>
+        </ol>
+        <p>And here is the solution:</p>
+        <ol>
+          <li>Main character is a dinosaur drawn by my beloved wife Maryam</li>
+          <li>The goal is to collect apples by moving on a chess-like field</li>
+          <li>No enemies or other dangerous stuff</li>
+          <li>
+            Stone wall appear on a random cell after each collected apple making
+            the field looks more like a maze is process (special algorithm
+            doesn't let the walls to block available cells completely)
+          </li>
+          <li>
+            When there's no room left for another wall, field cleans up
+            compleatly, saving all collected apples
+          </li>
+          <li>
+            Collected apples are presented as a pile in the basket (wierd
+            rectangular basket) so it is visually became more massive when more
+            apples are collected
+          </li>
+          <li>Game controllers are supported as well as keyboard and touch</li>
+        </ol>
+      </section>
+      <section>
+        <h2>Try it out</h2>
+        <p>You can play the game right in your browser:</p>
+        <figure>
+          <a
+            class="Document-Button"
+            style="--size: var(--size-l); --color: var(--blue-color)"
+            href="./"
+          >
+            Play the game
+          </a>
+        </figure>
+        <p>
+          Gamepad, keyboard arrows and touchscreen are supported. You can
+          specify the field size by "size" parameter. Available sizes are:
+        </p>
+        <ul>
+          <li>
+            <a href="https://800147.github.io/kids-game/?size=3"
+              >https://800147.github.io/kids-game/?size=3</a
+            >
+          </li>
+          <li>
+            <a href="https://800147.github.io/kids-game/?size=5"
+              >https://800147.github.io/kids-game/?size=5</a
+            >
+          </li>
+          <li>
+            <a href="https://800147.github.io/kids-game/?size=7"
+              >https://800147.github.io/kids-game/?size=7</a
+            >
+          </li>
+          <li>
+            <a href="https://800147.github.io/kids-game/?size=9"
+              >https://800147.github.io/kids-game/?size=9</a
+            >
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Sources</h2>
+        <p>The sources can be found on Github:</p>
+        <figure>
+          <a
+            class="Document-Button"
+            style="--size: var(--size-l)"
+            href="https://github.com/800147/kids-game"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Sources on Github
+          </a>
+        </figure>
+      </section>
+    </main>
+  </body>
 </html>
